@@ -10,12 +10,14 @@ app.set('views', 'views');
 
 // Import routes
 const home = require('./routes/home');
+const about = require('./routes/about');
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use(home);
+app.use(about);
 
 app.listen(3000);
 console.log("Listening to port 3000: http://localhost:3000/");
