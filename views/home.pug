@@ -1,9 +1,11 @@
 extends layout/layout.pug
 
 block content
-  .container.text-center.p-5
-    h1.font-weight-light Website is now live. Let's go!!!
-    h4.font-weight-light.text-muted The website is not yet done.
-    p.font-weight
-      | Consider following me on Github 
-      a(href="http://github.com/ayaanqui/") @ayaanqui
+  include ./layout/navbar
+  .row.text-center.p-5
+    .col-md-12
+      h1.font-weight-light Awesome! Website is live
+      h4.font-weight-light.text-muted This website is still under works. Check back later.
+      p.font-weight
+        | In the meantime, consider following me on 
+        a(href="http://github.com/ayaanqui/", target="_blank", title="@ayaanqui on GitHub") GitHub
