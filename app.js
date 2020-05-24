@@ -10,6 +10,7 @@ app.set('views', 'views');
 
 // Import routes
 const home = require('./routes/home');
+const projects = require('./routes/projects');
 const about = require('./routes/about');
 
 // Middleware
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use(home);
+app.use(projects);
 app.use(about);
 
 app.listen(3000);
