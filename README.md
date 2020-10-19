@@ -1,1 +1,0 @@
-My personal website displaying all my works.
