@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Navbar = props => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
@@ -9,16 +11,24 @@ const Navbar = props => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+            <Link href='/'>
+              <a className="nav-link">Home <span className="sr-only">(current)</span></a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Portfolio</a>
+            <Link className="nav-link" href="portfolio">
+              <a className="nav-link">Portfolio</a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Resume</a>
+            <Link className="nav-link" href="resume">
+              <a className="nav-link">Resume</a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Contact</a>
+            <Link className="nav-link" href="about">
+              <a className="nav-link">About</a>
+            </Link>
           </li>
         </ul>
       </div>
