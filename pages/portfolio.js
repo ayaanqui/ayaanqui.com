@@ -29,7 +29,7 @@ class Portfolio extends React.Component {
         <div className="list-group">
           {
             this.state.repos.map(repo => (
-              <a href={repo.url} target="_blank" className="list-group-item list-group-item-action">
+              <a href={repo.html_url} target="_blank" className="list-group-item list-group-item-action">
                 {repo.name}
               </a>
             ))
