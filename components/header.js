@@ -4,7 +4,7 @@ const Header = props => {
   let title = "";
   if (props.title)
     title = props.title + " - ";
-  title += "Ayaan Siddiqui v2";
+  title += "Ayaan Siddiqui";
 
 
   return (
