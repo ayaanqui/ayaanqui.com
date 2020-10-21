@@ -1,5 +1,5 @@
 body {
-    color: rgb(216, 216, 216);
+    color: #d8d8d8;
 }
 
 a {
@@ -10,4 +10,8 @@ a {
 a:hover {
     color: #f0f0f0;
     text-decoration: solid!important;
+}
+
+.list-group {
+    color: #444;
 }
