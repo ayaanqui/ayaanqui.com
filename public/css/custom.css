@@ -4,4 +4,10 @@ body {
 
 a {
     color: #ffffff;
+    text-decoration: dashed!important;
+}
+
+a:hover {
+    color: #f0f0f0;
+    text-decoration: solid!important;
 }
