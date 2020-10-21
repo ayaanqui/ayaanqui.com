@@ -12,6 +12,7 @@ const Header = props => {
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
       <link rel="stylesheet" href="/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/css/custom.css" />
 
       { props.children}
     </Head>
