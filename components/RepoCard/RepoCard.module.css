@@ -1,16 +1,7 @@
 .repo_card {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(16, 16, 16, 0.5);
     padding: 15px 15px;
-    color: #444;
     display: block;
-}
-
-.repo_card a {
-    color: #444;
-}
-
-.repo_card a:hover {
-    color: #444!important;
 }
 
 .owner {
@@ -36,6 +27,6 @@
     text-decoration: underline!important;
 }
 
-/* .description p {
-    font-size: 13px;
-} */
+.description p {
+    color: #fdfdfd;
+}
