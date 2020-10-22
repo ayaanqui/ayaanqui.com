@@ -17,13 +17,21 @@ const RepoCard = props => {
             </a>
           </h4>
         </div>
-        <div className={styles.description}><p>{props.description}</p></div>
+        <div className={styles.description}>
+          {(props.description) ? (
+            <p>{props.description}</p>
+          ) : (
+              <p><i>No description</i></p>
+            )}
+        </div>
         <div className={styles.details}>
           {(props.language) ? (
-            <span class="badge badge-pill badge-primary">
+            <span className="badge badge-pill badge-dark">
               {props.language}
             </span>
-          ) : null}
+          ) : (
+              <span className="badge badge-pill badge-warning">N/A</span>
+            )}
         </div>
       </div>
     </>
