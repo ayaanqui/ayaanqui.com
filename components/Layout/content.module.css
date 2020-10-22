@@ -1,7 +1,8 @@
 .siteWrapper {
-    background-color: rgb(75, 43, 255);
+    background-color: rgb(23, 23, 23);
     color: #fff;
-    background: linear-gradient(rgb(75, 43, 255, 0.9),rgba(69, 11, 117, 0.9)), url('../../public/images/mountain_snow.jpg');
+    background: linear-gradient(rgba(88, 88, 88, 0.9), rgba(12, 12, 12, 0.9)), 
+                url('../../public/images/mountain_snow.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
