@@ -1,0 +1,41 @@
+.repo_card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 15px;
+    color: #444;
+    display: block;
+}
+
+.repo_card a {
+    color: #444;
+}
+
+.repo_card a:hover {
+    color: #444!important;
+}
+
+.owner {
+    margin-bottom: 10px;
+}
+
+.owner img {
+    max-width: 20px;
+    display: inline;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.owner span {
+    font-size: 12px;
+}
+
+.name a {
+    display: block;
+}
+
+.name a:hover {
+    text-decoration: underline!important;
+}
+
+/* .description p {
+    font-size: 13px;
+} */
