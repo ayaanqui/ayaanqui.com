@@ -1,8 +1,10 @@
 import React from 'react';
 import Axios from 'axios';
+import Masonry from 'react-masonry-css';
 
 import Header from '../components/header';
 import Content from '../components/Layout/content';
+import RepoCard from '../components/RepoCard/RepoCard';
 
 class Portfolio extends React.Component {
   state = {
@@ -15,7 +17,7 @@ class Portfolio extends React.Component {
   }
 
   getRepos = () => {
-    const repoUrl = 'https://api.github.com/users/ayaanqui/repos';
+    const repoUrl = 'https://api.github.com/users/ayaanqui/repos?type=all&sort=updated';
     this.setState({ loading: true });
     Axios.get(repoUrl)
       .then(res => this.setState({ repos: res.data, loading: false }))
@@ -24,22 +26,29 @@ class Portfolio extends React.Component {
 
   renderRepos = () => {
     if (!this.state.loading) {
-      this.state.repos.forEach(repo => console.log(repo.name));
       return (
-        <div className="list-group">
-          {
-            this.state.repos.map(repo => (
-              <a
-                href={repo.html_url}
-                target="_blank"
-                className="list-group-item list-group-item-action"
+        <>
+          <div className="list-group">
+            {this.state.repos.map(repo => (
+              <RepoCard
+                owner={repo.owner}
+                name={repo.name}
+                fullname={repo.fullname}
+                description={repo.description}
+                htmlUrl={repo.html_url}
+                language={repo.language}
+                defaultBranch={repo.default_branch}
+                private={repo.private}
+                forks={repo.forks}
+                size={repo.size}
+                hasPages={repo.hasPages}
+                watchers={repo.watchers}
+                id={repo.id}
                 key={repo.id}
-              >
-                {repo.name}
-              </a>
-            ))
-          }
-        </div>
+              />
+            ))}
+          </div>
+        </>
       );
     }
   };
