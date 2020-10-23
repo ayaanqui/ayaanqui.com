@@ -1,6 +1,10 @@
 import styles from './RepoCard.module.css';
+import moment from 'moment';
 
 const RepoCard = props => {
+  const lastUpdated = moment(props.pushedAt).fromNow();
+  const created = moment(props.createdAt).fromNow();
+
   return (
     <>
       <div className={`list-group-item ${styles.repo_card}`}>
@@ -25,12 +29,17 @@ const RepoCard = props => {
             )}
         </div>
         <div className={styles.details}>
+          <span className="badge badge-pill badge-dark mr-2">
+            <span className="icon-history-clock-button mr-1"></span>
+            {lastUpdated}
+          </span>
+
           {(props.language) ? (
-            <span className="badge badge-pill badge-dark">
+            <span className="badge badge-pill badge-primary mr-2">
               {props.language}
             </span>
           ) : (
-              <span className="badge badge-pill badge-warning">N/A</span>
+              <span className="badge badge-pill badge-warning mr-2">N/A</span>
             )}
         </div>
       </div>
