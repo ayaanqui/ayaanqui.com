@@ -13,6 +13,7 @@ const Header = props => {
       <link rel="icon" href="/favicon.ico" />
       <link rel="stylesheet" href="/css/bootstrap.min.css" />
       <link rel="stylesheet" href="/css/custom.css" />
+      <link rel="stylesheet" href="/icons/flaticon.css" />
 
       { props.children}
 
