@@ -45,6 +45,8 @@ class Portfolio extends React.Component {
                 watchers={repo.watchers}
                 id={repo.id}
                 key={repo.id}
+                pushedAt={repo.pushed_at}
+                createdAt={repo.created_at}
               />
             ))}
           </div>
