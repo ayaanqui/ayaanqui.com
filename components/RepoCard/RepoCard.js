@@ -6,7 +6,7 @@ const RepoCard = props => {
       <div className={`list-group-item ${styles.repo_card}`}>
         <div className={styles.owner}>
           <a href={props.owner.html_url} target="_blank">
-            <img src={props.owner.avatar_url} />
+            <img src={`${props.owner.avatar_url}&s=30`} />
             <span>{props.owner.login}</span>
           </a>
         </div>
