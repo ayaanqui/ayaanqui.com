@@ -1,0 +1,71 @@
+.homeContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+}
+
+.title {
+    padding: 20px 10px;
+}
+
+.title > h1 {
+    font-weight: bold;
+    font-size: 3.3rem;
+}
+
+.homeNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeNavList {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.homeNavListItem {
+    margin: 0px 5px;
+    display: inline-block;
+}
+
+.homeNavListItem a {
+    color: rgba(255,255,255,.5);
+}
+
+.homeNavListItem a:hover,
+.homeNavListItem a:focus {
+    color: rgba(255,255,255,.75);
+}
+
+.homeNavListItem a.active {
+    color: #fff;
+}
+
+.summary {
+    margin-top: 20px;
+    padding: 20px 10px;
+}
+
+.summary > p {
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 550px) {
+    .title > h1 {
+        font-size: 2.7rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .title > h1 {
+        font-size: 2.4rem;
+    }
+}
