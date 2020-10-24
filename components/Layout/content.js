@@ -5,7 +5,7 @@ const Content = props => {
   return (
     <div className={styles.siteWrapper}>
       <div className={styles.siteInner}>
-        <Navbar />
+        {props.navInvisible ? null : (<Navbar />)}
 
         {props.children}
       </div>
