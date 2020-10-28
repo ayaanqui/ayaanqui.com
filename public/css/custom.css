@@ -16,3 +16,11 @@ a:hover {
     border-radius: 10px;
     margin: 0px -15px;
 }
+
+.list-group-item {
+    border: 1px solid rgba(0,0,0,0.25)!important;
+}
+
+.navbar-brand {
+    font-weight: 800!important;
+}
