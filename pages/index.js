@@ -35,7 +35,7 @@ export default function Home() {
 
         <div className={styles.summary}>
           <p>
-            This webstite is still under works, with only the portfolio page working. In the near future, I hope to display my resume, projects, interests, and contact information on here.
+            Currently a student at the University of Illinois at Chicago studying computer science. Fluent in Java, JavaScript (Node.js), and C++. When I'm not coding or doing school related work, I enjoy spending time learning martial arts such as BJJ, Muay Thai, and Wrestling.
           </p>
         </div>
       </div>
