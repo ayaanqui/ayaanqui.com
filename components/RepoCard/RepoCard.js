@@ -30,6 +30,11 @@ const RepoCard = props => {
         </div>
         <div className={styles.details}>
           <span className="badge badge-pill badge-dark mr-2">
+            <span className="icon-split-call-arrows mr-2"></span>
+            {props.forks}
+          </span>
+
+          <span className="badge badge-pill badge-dark mr-2">
             <span className="icon-history-clock-button mr-1"></span>
             {lastUpdated}
           </span>
@@ -39,9 +44,14 @@ const RepoCard = props => {
               {props.language}
             </span>
           ) : (
-              <span className="badge badge-pill badge-warning mr-2">N/A</span>
-            )}
+            <span className="badge badge-pill badge-warning mr-2">N/A</span>
+          )}
+
+          <span className="badge badge-pill badge-dark mr-2">
+            {props.size} kb
+          </span>
         </div>
+
       </div>
     </>
   );
