@@ -7,8 +7,6 @@ const Header = props => {
   title += "Ayaan Siddiqui";
 
   const gtag = process.env.NEXT_PUBLIC_GTAG;
-  console.log(gtag);
-
 
   return (
     <Head>
