@@ -6,6 +6,9 @@ const Header = props => {
     title = props.title + " - ";
   title += "Ayaan Siddiqui";
 
+  const gtag = process.env.NEXT_PUBLIC_GTAG;
+  console.log(gtag);
+
 
   return (
     <Head>
@@ -20,6 +23,19 @@ const Header = props => {
       <script src="/js/jquery-3.5.1.slim.min.js"></script>
       <script src="/js/popper.min.js"></script>
       <script src="/js/bootstrap.min.js"></script>
+
+      {/* Global site tag (gtag.js) - Google Analytics */}
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag}`}></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag}');
+          `,
+        }}
+      />
     </Head>
   );
 };
