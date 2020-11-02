@@ -1,22 +1,12 @@
 .homeContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
     width: 100%;
-    margin: 0 auto;
-    position: absolute;
-    top: 0px;
-}
-
-.title {
-    padding: 20px 10px;
+    margin: 20px auto;
+    margin-top: 10vh;
 }
 
 .title > h1 {
     font-weight: bold;
-    font-size: 3.3rem;
+    font-size: 2.7rem;
 }
 
 .homeNav {
@@ -50,8 +40,9 @@
 }
 
 .summary {
-    margin-top: 20px;
-    padding: 20px 10px;
+    margin-top: 5px;
+    padding: 0px 0px;
+    margin-bottom: 10vh;
 }
 
 .summary > p {
@@ -61,12 +52,22 @@
 
 @media screen and (max-width: 550px) {
     .title > h1 {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
+    }
+
+    .summary > p {
+        font-size: 1.0rem;
     }
 }
 
 @media screen and (max-width: 375px) {
     .title > h1 {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
     }
+}
+
+.styleBtn {
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }

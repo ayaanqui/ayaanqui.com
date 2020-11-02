@@ -24,3 +24,15 @@ a:hover {
 .navbar-brand {
     font-weight: 800!important;
 }
+
+.navbar {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    }
+}
