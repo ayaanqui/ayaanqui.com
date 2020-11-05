@@ -1,6 +1,6 @@
 import Header from '../../components/header';
 import Content from '../../components/Layout/content';
-import ParseResume from './parseResume';
+import ParseResume from '../../util/parseResume';
 import fs from 'fs';
 import PdfParse from 'pdf-parse';
 import Resume from '../../components/Resume/Resume';
