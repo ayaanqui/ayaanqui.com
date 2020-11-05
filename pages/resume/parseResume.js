@@ -102,10 +102,6 @@ class ParseResume {
   parse() {
     this.sections.forEach(section => this.formatSection(section));
   }
-
-  // parseInfo() {
-  //   console.log(this.sections);
-  // }
 };
 
 export default ParseResume;
