@@ -8,7 +8,7 @@ class ParseResume {
   }
 
   getPersonalInfo() {
-    return this.personalInfo;
+    return this.personalInfo.split(/\s\n|\n/m).splice(2, 5);
   }
 
   getSections() {
