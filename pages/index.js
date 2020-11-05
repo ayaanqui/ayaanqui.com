@@ -1,5 +1,4 @@
 import Header from '../components/header';
-import Link from 'next/link';
 import Content from '../components/Layout/content';
 import styles from './index.module.css';
 
@@ -11,12 +10,12 @@ export default function Home() {
   return (
     <Content>
       <Header />
-      
+
       <div className={`${styles.homeContent} container`}>
         <div className={styles.title}>
           <h1>Hi there!</h1>
         </div>
-        
+
         <div className={styles.summary}>
           <p>
             I'm a student at University of Illinois at Chicago studying computer science. When I'm not coding or doing school-related work, I enjoy learning martial arts such as Jiu Jitsu, Kickboxing, and Wrestling.
