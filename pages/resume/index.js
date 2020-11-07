@@ -5,6 +5,7 @@ import fs from 'fs';
 import PdfParse from 'pdf-parse';
 import Resume from '../../components/Resume/Resume';
 import PersonalInfo from '../../components/Resume/PersonalInfo/PersonalInfo';
+import styles from './index.module.css';
 
 const resume = props => {
   const parseResume = new ParseResume(props.resumeRawText);
@@ -22,8 +23,8 @@ const resume = props => {
 
         <br />
 
-        <div className="row">
-          <div className="col-md-4 position-relative">
+        <div className={`row ${styles.rpad}`}>
+          <div className={`col-md-4 position-relative ${styles.cpad}`}>
             <PersonalInfo
               fname={personalInfo[0]}
               lname={personalInfo[1]}
@@ -32,7 +33,7 @@ const resume = props => {
               workAuth={personalInfo[4]}
             />
           </div>
-          <div className="col-md-8">
+          <div className={`col-md-8 ${styles.cpad}`}>
             <Resume sections={sections} />
           </div>
         </div>
