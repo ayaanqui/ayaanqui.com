@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import Masonry from 'react-masonry-css';
 
 import Header from '../../components/header';
 import Content from '../../components/Layout/content';
