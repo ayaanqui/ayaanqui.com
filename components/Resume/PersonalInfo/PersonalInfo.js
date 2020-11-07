@@ -3,7 +3,7 @@ import styles from './PersonalInfo.module.css';
 const personalInfo = props => {
   return (
     <div className={styles.sticky_info}>
-      <div className={`card mb-3 ${styles.info_card}`}>
+      <div className={`card ${styles.info_card}`}>
         <div className="card-body">
           <div className={styles.name}>
             <h1>{props.fname}</h1>
