@@ -18,7 +18,11 @@ const Navbar = props => {
 
             <NavLink href="/resume"><a className="nav-link">Resume</a></NavLink>
 
-            <NavLink href="/about"><a className="nav-link">About</a></NavLink>
+            <li className={`nav-item`}>
+              <a href="mailto:moahammedayaan.dev@gmail.com" className="nav-link">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
       </div>
