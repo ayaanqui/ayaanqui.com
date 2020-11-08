@@ -15,93 +15,55 @@ class ParseResume {
     return this.sectionsFormat;
   }
 
-  formatSectionChild(name, info, items, details) {
-    return {
-      name,
-      info,
-      items,
-      details,
-    };
-  }
+  parseSubsectionData(subsection) {
+    let name = subsection[0];
+    let info = null;
+    if (name.includes('Portfolio') || name.includes('Expected'))
+      return null;
+    
+    let detailsList = [];
+    let itemsList = [];
 
-  attach(start, end, list) {
-    return list.splice(start, end).reduce((prev, cur) => prev + ' ' + cur);
-  }
-
-  listify(start, end, list) {
-    return list.splice(start, end).map(item => item.substring(1));
-  }
-
-  formatSkills(name, data) {
-    data = data.splice(data.indexOf('Programming'));
-
-    let subSections = [];
-    subSections.push(this.formatSectionChild(data[0], null, this.attach(1, 3, data), null));
-
-    data = data.splice(data.indexOf('Backend/Frontend'));
-    subSections.push(this.formatSectionChild(data[0], null, this.attach(1, 3, data), null));
-
-    data = data.splice(data.indexOf('Other'));
-    subSections.push(this.formatSectionChild(data[0], null, this.attach(1, 3, data), null));
-
-    this.sectionsFormat.push({
-      name: name,
-      data: subSections,
+    subsection.splice(1).forEach(elem => {
+      if (elem.includes('-'))
+        info = elem;
+      else if (elem.includes('●'))
+        detailsList.push(elem.substring(1));
+      else
+        itemsList.push(elem);
     });
+
+    let items = (itemsList.length > 0) ? itemsList.reduce((prev, cur) => prev + " " + cur) : null;
+    let details = (detailsList.length > 0) ? detailsList : null;
+    return { name, info, items, details };
   }
 
-  formatEducation(name, data) {
-    data = data.splice(3);
+  parseSubsections(sectionName, subsectionList) {
+    let subsections = [];
+    let subsection = [];
 
-    let subSections = [];
-    subSections.push(this.formatSectionChild(data[0], data[1], data[2], null));
-
-    data = data.splice(4);
-    subSections.push(this.formatSectionChild(data[0], data[1], data[2], null));
-
-    data = data.splice(4);
-    subSections.push(this.formatSectionChild(data[0], data[1], data[2], null));
-
-    this.sectionsFormat.push({
-      name: name,
-      data: subSections,
+    subsectionList.forEach((item, i) => {
+      if (item == '' || item == ' ' || i == subsectionList.length - 1) {
+        if (subsection.length != 0) {
+          let res = this.parseSubsectionData(subsection);
+          if (res)
+            subsections.push(res);
+          subsection = [];
+        }
+      } else
+        subsection.push(item);
     });
-  }
-
-  formatExperience(name, data) {
-    data = data.splice(1);
-
-    let subSections = [];
-    subSections.push(this.formatSectionChild(data[0], data[1], null, null));
-
-    data = data.splice(3);
-    subSections.push(this.formatSectionChild(data[0], data[1], null, this.listify(2, 2, data)));
-
-    data = data.splice(3);
-    subSections.push(this.formatSectionChild(data[0], data[1], null, this.listify(2, 2, data)));
-
-    this.sectionsFormat.push({
-      name: name,
-      data: subSections,
-    });
-  }
-
-  formatSection(section) {
-    let sectionList = section.split(/\s\n/m);
-    const sectionName = sectionList[1];
-    sectionList = sectionList.splice(2);
-
-    if (sectionName == 'Skills')
-      this.formatSkills(sectionName, sectionList);
-    else if (sectionName == 'Education')
-      this.formatEducation(sectionName, sectionList);
-    else if (sectionName == 'Experience')
-      this.formatExperience(sectionName, sectionList);
+    return { name: sectionName, data: subsections };
   }
 
   parse() {
-    this.sections.forEach(section => this.formatSection(section));
+    this.sections.forEach(section => {
+      let sectionList = section.split(/\s\n/m);
+      const sectionName = sectionList[1];
+      let subsectionList = sectionList.splice(2);
+      this.sectionsFormat.push(this.parseSubsections(sectionName, subsectionList));
+    });
   }
-};
+}
 
 export default ParseResume;
