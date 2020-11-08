@@ -12,7 +12,6 @@ const resume = props => {
   parseResume.parse();
   let sections = parseResume.getSections();
   let personalInfo = parseResume.getPersonalInfo();
-  console.log(personalInfo);
 
   return (
     <Content>
