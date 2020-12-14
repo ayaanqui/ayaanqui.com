@@ -15,7 +15,7 @@ const RepoCard = props => {
           </a>
         </div>
         <div className={styles.name}>
-          <h4>
+          <h4 className={styles.hN_InlineBlock}>
             <a href={props.htmlUrl} target="_blank">
               {props.name}
             </a>
