@@ -83,7 +83,7 @@ class Portfolio extends React.Component {
 
         <div className="container mt-5 mb-5">
           <h1>Portfolio</h1>
-          <p>Data pulled from GitHub API for <a href="https://github.com/ayaanqui" title="Ayaan's GitHub page">@ayaanqui</a></p>
+          <p>Data pulled via <i><a className="link" href="https://developer.github.com/v3/" target="_blank">GitHub API v3</a></i></p>
 
           <br />
 

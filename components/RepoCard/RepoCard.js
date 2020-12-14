@@ -2,7 +2,7 @@ import styles from './RepoCard.module.css';
 import moment from 'moment';
 
 const RepoCard = props => {
-  const lastUpdated = moment(props.pushedAt).fromNow();
+  const lastUpdated = moment(props.pushedAt).fromNow(true);
   const created = moment(props.createdAt).fromNow();
 
   return (
@@ -31,7 +31,7 @@ const RepoCard = props => {
           </span>
 
           <span className="badge badge-pill badge-dark mr-2">
-            <span className="icon-history-clock-button mr-1"></span>
+            <span className="icon-history-clock-button mr-2"></span>
             {lastUpdated}
           </span>
 
