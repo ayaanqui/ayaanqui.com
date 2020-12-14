@@ -22,11 +22,7 @@ const RepoCard = props => {
           </h4>
         </div>
         <div className={styles.description}>
-          {(props.description) ? (
-            <p>{props.description}</p>
-          ) : (
-              <p><i>No description</i></p>
-            )}
+          <p>{(props.description) ? props.description : null}</p>
         </div>
         <div className={styles.details}>
           <span className="badge badge-pill badge-dark mr-2">
