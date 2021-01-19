@@ -12,16 +12,10 @@ const Header = props => {
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/images/favicon.ico" />
+      <link rel="stylesheet" href="/fonts/fonts.css" />
       <link rel="stylesheet" href="/css/bootstrap.min.css" />
       <link rel="stylesheet" href="/css/custom.css" />
       <link rel="stylesheet" href="/icons/flaticon.css" />
-
-      <link
-        rel="preload"
-        href="/fonts/Inter/Inter.ttf"
-        as="font"
-        crossOrigin=""
-      />
 
       { props.children}
 
