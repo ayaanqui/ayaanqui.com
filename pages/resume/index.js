@@ -42,7 +42,7 @@ const resume = props => {
 };
 
 export const getStaticProps = async () => {
-  let resumeBuffer = fs.readFileSync('public/resume.pdf');
+  let resumeBuffer = fs.readFileSync('public/docs/resume.pdf');
 
   return PdfParse(resumeBuffer)
     .then(({ text }) => {
