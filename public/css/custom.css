@@ -1,42 +1,63 @@
+@font-face {
+  font-family: Inter;
+  src: url(/fonts/Inter.ttf);
+}
+
 body {
-    color: #d8d8d8;
+  color: #d8d8d8;
+  font-family: Inter;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }
 
 a {
-    color: #ffffff;
-    text-decoration: dashed!important;
+  color: #ffffff;
+  text-decoration: dashed !important;
 }
 
 a:hover {
-    color: #f0f0f0;
-    text-decoration: solid!important;
+  color: #f0f0f0;
+  text-decoration: solid !important;
 }
 
 .list-group {
-    border-radius: 10px;
-    margin: 0px -15px;
+  border-radius: 10px;
+  margin: 0px -15px;
 }
 
 .list-group-item {
-    border: 1px solid rgba(0,0,0,0.25)!important;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
 }
 
 .navbar-brand {
-    font-weight: 800!important;
+  font-weight: 800 !important;
 }
 
 .navbar {
-    padding-left: 0px!important;
-    padding-right: 0px!important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 @media screen and (max-width: 576px) {
-    .navbar {
-        padding-left: 1rem!important;
-        padding-right: 1rem!important;
-    }
+  .navbar {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 .link {
-    color: rgba(255, 255, 255, 0.6)!important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
