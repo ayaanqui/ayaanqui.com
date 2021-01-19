@@ -1,30 +1,30 @@
 .sticky_info {
-    position: sticky;
-    top: 10px;
-    margin-bottom: 15px;
+  position: sticky;
+  top: 10px;
+  margin-bottom: 15px;
 }
 
 .info_card {
-    background-color: rgb(16, 16, 16, 0.5);
-    border-radius: 8px;
+  background-color: rgb(16, 16, 16, 0.5);
+  border-radius: 8px;
 }
 
 .name {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .name h1 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .dob {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .work_status {
-    margin-top: 10px;
-    font-weight: 100;
-    color:  rgb(167, 167, 167);
-    font-style: italic;
-    font-size: 0.9rem;
+  margin-top: 10px;
+  font-weight: 200;
+  color: rgb(167, 167, 167);
+  font-style: italic;
+  font-size: 0.9rem;
 }
