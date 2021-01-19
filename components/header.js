@@ -17,11 +17,11 @@ const Header = props => {
       <link rel="stylesheet" href="/icons/flaticon.css" />
 
       <link
-            rel="preload"
-            href="/fonts/Inter/Inter.ttf"
-            as="font"
-            crossOrigin=""
-          />
+        rel="preload"
+        href="/fonts/Inter/Inter.ttf"
+        as="font"
+        crossOrigin=""
+      />
 
       { props.children}
 

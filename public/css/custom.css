@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Inter";
-  src: url("/fonts/Inter/Inter.ttf");
+  src: url("/static/fonts/Inter/Inter.ttf");
 }
 
 body {
   color: #d8d8d8;
-  font-family: Inter;
+  font-family: "Inter";
 }
 
 .h1,
