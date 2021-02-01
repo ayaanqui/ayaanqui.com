@@ -1,5 +1,20 @@
 import styles from './Section.module.css';
 
+/**
+ * 
+ * @param {*} sectionName Resume section name
+ */
+const parseSectionName = sectionName => {
+  const domainExtensionMatch = sectionName.match(/.com|.org|.net/g);
+  if (domainExtensionMatch != null) {
+    const slashPos = sectionName.search("/");
+    if (slashPos != -1) {
+      return sectionName.substring(0, slashPos);
+    }
+  }
+  return sectionName;
+};
+
 const section = props => {
   return (
     <div className={`card ${styles.resume_card}`} key={props.name}>
@@ -8,11 +23,17 @@ const section = props => {
         <div className={styles.subsections}>
           {props.data.map(subsection => (
             <div className={styles.subsection} key={`${props.name}_${subsection.name}`}>
-              <h5 className={styles.subsection_title}>{subsection.name}</h5>
+              <h5 className={styles.subsection_title}>
+                {parseSectionName(subsection.name)}
+              </h5>
 
-              {(subsection.info) ? (<p className={styles.info}><i>{subsection.info}</i></p>) : null}
+              {(subsection.info) ? (
+                <p className={styles.info}><i>{subsection.info}</i></p>
+              ) : null}
 
-              {(subsection.items) ? (<p>{subsection.items}</p>) : null}
+              {(subsection.items) ? (
+                <p>{subsection.items}</p>
+              ) : null}
 
               {(subsection.details) ? (
                 <ul>
