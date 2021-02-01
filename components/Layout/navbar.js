@@ -19,7 +19,7 @@ const Navbar = props => {
             <NavLink href="/resume"><a className="nav-link">Resume</a></NavLink>
 
             <li className={`nav-item`}>
-              <a href="mailto:moahammedayaan.dev@gmail.com" className="nav-link">
+              <a href="mailto:ayaanqui.com@gmail.com" className="nav-link">
                 Contact
               </a>
             </li>
