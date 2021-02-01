@@ -1,8 +1,10 @@
 import styles from './Section.module.css';
 
 /**
+ * Parses the section name to remove any URLs
  * 
  * @param {*} sectionName Resume section name
+ * @return Returns sectionName without a URL
  */
 const parseSectionName = sectionName => {
   const domainExtensionMatch = sectionName.match(/.com|.org|.net/g);

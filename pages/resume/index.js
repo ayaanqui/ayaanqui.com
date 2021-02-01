@@ -26,10 +26,9 @@ const resume = props => {
           <div className={`col-md-4 position-relative ${styles.cpad}`}>
             <PersonalInfo
               fname={personalInfo[0]}
-              lname={personalInfo[1]}
-              dob={personalInfo[2]}
-              status={personalInfo[3]}
-              workAuth={personalInfo[4]}
+              dob={personalInfo[1]}
+              status={personalInfo[2]}
+              workAuth={personalInfo[3]}
             />
           </div>
           <div className={`col-md-8 ${styles.cpad}`}>

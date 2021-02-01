@@ -7,7 +7,6 @@ const personalInfo = props => {
         <div className="card-body">
           <div className={styles.name}>
             <h1>{props.fname}</h1>
-            <h1>{props.lname}</h1>
           </div>
 
           <div className={styles.dob}>
