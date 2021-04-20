@@ -1,17 +1,15 @@
 import Header from '../../components/header';
 import Content from '../../components/Layout/content';
 import ParseResume from '../../util/parseResume';
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import PdfParse from 'pdf-parse';
 import Resume from '../../components/Resume/Resume';
 import PersonalInfo from '../../components/Resume/PersonalInfo/PersonalInfo';
 import styles from './index.module.css';
 
 const resume = props => {
-  const parseResume = new ParseResume(props.resumeRawText);
-  parseResume.parse();
-  let sections = parseResume.getSections();
-  let personalInfo = parseResume.getPersonalInfo();
+  let sections = props.sections;
+  let personalInfo = props.personalInfo;
 
   return (
     <Content>
@@ -41,13 +39,18 @@ const resume = props => {
 };
 
 export const getStaticProps = async () => {
-  let resumeBuffer = fs.readFileSync('public/docs/resume.pdf');
+  const resumeBuffer = await fs.readFile('public/docs/resume.pdf');
 
   return PdfParse(resumeBuffer)
     .then(({ text }) => {
+      const parseResume = new ParseResume(text);
+      parseResume.parse();
       return {
-        props: { resumeRawText: text },
-      }
+        props: {
+          sections: parseResume.getSections(),
+          personalInfo: parseResume.getPersonalInfo(),
+        },
+      };
     })
     .catch(_ => null);
 };
