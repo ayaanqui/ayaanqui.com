@@ -107,18 +107,24 @@ class Portfolio extends React.Component {
       }
     });
 
+    const button = lang => {
+      const active = this.state.language === lang ? 'active' : '';
+      return (
+        <button
+          type="button"
+          className={`btn btn-dark mr-1 ${active}`}
+          key={lang}
+          onClick={(e) => this.languageButtonAction(lang)}
+        >
+          {lang === '' ? 'All' : lang}
+        </button>
+      );
+    };
+
     return (
       <div>
-        <button type="button" className={`btn btn-dark mr-1`} onClick={(e) => this.languageButtonAction('')}>
-          All
-        </button>
-        {languages.map(lang => {
-          return (
-            <button type="button" className={`btn btn-dark mr-1`} key={lang} onClick={(e) => this.languageButtonAction(lang)}>
-              {lang}
-            </button>
-          );
-        })}
+        {button('')}
+        {languages.map(lang => button(lang))}
       </div>
     );
   };
