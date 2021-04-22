@@ -13,6 +13,7 @@ class Portfolio extends React.Component {
     repos: [],
     loading: true,
     failedLoading: false,
+    language: ''
   }
 
   componentDidMount() {
@@ -28,41 +29,48 @@ class Portfolio extends React.Component {
   };
 
   renderRepos = () => {
-    if (!this.state.loading) {
-      const breakpointColumnsObj = {
-        default: 2,
-        766: 1,
-      };
+    if (this.state.loading)
+      return;
 
-      return (
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className={styles.masonry_grid}
-          columnClassName={styles.masonry_grid_column}
-        >
-          {this.state.repos.map(repo => (
-            <RepoCard
-              owner={repo.owner}
-              name={repo.name}
-              fullname={repo.fullname}
-              description={repo.description}
-              htmlUrl={repo.html_url}
-              language={repo.language}
-              defaultBranch={repo.default_branch}
-              private={repo.private}
-              forks={repo.forks}
-              size={repo.size}
-              hasPages={repo.hasPages}
-              watchers={repo.watchers}
-              id={repo.id}
-              key={repo.id}
-              pushedAt={repo.pushed_at}
-              createdAt={repo.created_at}
-            />
-          ))}
-        </Masonry>
-      );
-    }
+    const breakpointColumnsObj = {
+      default: 2,
+      766: 1,
+    };
+
+    let repos = [];
+    if (this.state.language === '')
+      repos = this.state.repos;
+    else
+      repos = this.state.repos.filter(repos => repos.language === this.state.language);
+
+    return (
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className={styles.masonry_grid}
+        columnClassName={styles.masonry_grid_column}
+      >
+        {repos.map(repo => (
+          <RepoCard
+            owner={repo.owner}
+            name={repo.name}
+            fullname={repo.fullname}
+            description={repo.description}
+            htmlUrl={repo.html_url}
+            language={repo.language}
+            defaultBranch={repo.default_branch}
+            private={repo.private}
+            forks={repo.forks}
+            size={repo.size}
+            hasPages={repo.hasPages}
+            watchers={repo.watchers}
+            id={repo.id}
+            key={repo.id}
+            pushedAt={repo.pushed_at}
+            createdAt={repo.created_at}
+          />
+        ))}
+      </Masonry>
+    );
   };
 
   renderLoading = () => {
@@ -81,6 +89,10 @@ class Portfolio extends React.Component {
     }
   };
 
+  languageButtonAction = lang => {
+    this.setState({ language: lang });
+  };
+
   renderLanguagesButtons = () => {
     if (this.loading || this.failedLoading)
       return;
@@ -97,9 +109,12 @@ class Portfolio extends React.Component {
 
     return (
       <div>
+        <button type="button" className={`btn btn-dark mr-1`} onClick={(e) => this.languageButtonAction('')}>
+          All
+        </button>
         {languages.map(lang => {
           return (
-            <button type="button" className={`btn btn-dark mr-1`} key={lang}>
+            <button type="button" className={`btn btn-dark mr-1`} key={lang} onClick={(e) => this.languageButtonAction(lang)}>
               {lang}
             </button>
           );
