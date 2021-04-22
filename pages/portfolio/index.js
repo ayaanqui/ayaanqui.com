@@ -81,6 +81,33 @@ class Portfolio extends React.Component {
     }
   };
 
+  renderLanguagesButtons = () => {
+    if (this.loading || this.failedLoading)
+      return;
+
+    const languagesSet = new Set();
+    const languages = new Array(10);
+    this.state.repos.forEach(repo => {
+      const lang = repo.language;
+      if (!languagesSet.has(lang) && lang != null) {
+        languages.push(lang);
+        languagesSet.add(lang);
+      }
+    });
+
+    return (
+      <div>
+        {languages.map(lang => {
+          return (
+            <button type="button" className={`btn btn-dark mr-1`} key={lang}>
+              {lang}
+            </button>
+          );
+        })}
+      </div>
+    );
+  };
+
   render = () => {
     return (
       <Content>
@@ -89,6 +116,8 @@ class Portfolio extends React.Component {
         <div className="container mt-5 mb-5">
           <h1>Portfolio</h1>
           <p>Data pulled via <i><a className="link" href="https://developer.github.com/v3/" target="_blank">GitHub API v3</a></i></p>
+
+          {this.renderLanguagesButtons()}
 
           <br />
 
