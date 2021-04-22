@@ -12,6 +12,7 @@ class Portfolio extends React.Component {
   state = {
     repos: [],
     loading: true,
+    failedLoading: false,
   }
 
   componentDidMount() {
@@ -23,7 +24,7 @@ class Portfolio extends React.Component {
     this.setState({ loading: true });
     Axios.get(repoUrl)
       .then(res => this.setState({ repos: res.data, loading: false }))
-      .catch(err => console.log(err));
+      .catch(_ => this.setState({ loading: false, failedLoading: true }));
   };
 
   renderRepos = () => {
@@ -71,10 +72,14 @@ class Portfolio extends React.Component {
           <span className="spinner-grow text-light"></span>
         </div>
       );
-    else
-      return;
+    else if (this.state.failedLoading) {
+      return (
+        <div className="text-center mt-5">
+          <p><b>Failed to load content from GitHub</b></p>
+        </div>
+      );
+    }
   };
-
 
   render = () => {
     return (
