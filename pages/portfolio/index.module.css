@@ -8,3 +8,8 @@
 .masonry_grid_column {
   background-clip: padding-box;
 }
+
+.languageButton {
+  margin: 0px 5px 5px 0px;
+  border-radius: 10px;
+}

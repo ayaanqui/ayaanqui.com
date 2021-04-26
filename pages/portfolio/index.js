@@ -112,7 +112,7 @@ class Portfolio extends React.Component {
       return (
         <button
           type="button"
-          className={`btn btn-dark mr-1 ${active}`}
+          className={`btn btn-dark ${styles.languageButton} ${active}`}
           key={lang}
           onClick={(e) => this.languageButtonAction(lang)}
         >
