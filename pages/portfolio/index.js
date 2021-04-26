@@ -21,7 +21,7 @@ class Portfolio extends React.Component {
   }
 
   getRepos = () => {
-    const repoUrl = 'https://api.github.com/users/ayaanqui/repos?type=all&sort=updated';
+    const repoUrl = 'https://api.github.com/users/ayaanqui/repos?type=all&sort=updated&per_page=100';
     this.setState({ loading: true });
     Axios.get(repoUrl)
       .then(res => this.setState({ repos: res.data, loading: false }))
@@ -112,7 +112,7 @@ class Portfolio extends React.Component {
       return (
         <button
           type="button"
-          className={`btn btn-dark ${styles.languageButton} ${active}`}
+          className={`btn btn-dark btn-sm ${styles.languageButton} ${active}`}
           key={lang}
           onClick={(e) => this.languageButtonAction(lang)}
         >
