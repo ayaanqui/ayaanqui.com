@@ -1,5 +1,4 @@
-module.exports = {
-  env: {
-    NEXT_PUBLIC_GTAG: "G-V3SBXW0YP2",
-  },
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
+
+module.exports = nextConfig
