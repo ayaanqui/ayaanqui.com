@@ -43,6 +43,7 @@ export default function PortfolioComponent() {
         setRepos([]);
         setFailedLoading(true);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderRepos = () => {

@@ -1,4 +1,4 @@
-import Content from "../components/layout/content";
+import Content from "../components/layout/Content";
 
 const Error404Page = () => {
   return (

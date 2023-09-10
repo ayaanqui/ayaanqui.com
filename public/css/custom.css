@@ -46,6 +46,14 @@ a:hover {
   padding-right: 0px !important;
 }
 
+.navbar-nav {
+  flex-direction: row!important;
+}
+
+.navbar-nav .nav-link {
+  padding: 0px .6rem!important;
+}
+
 @media screen and (max-width: 576px) {
   .navbar {
     padding-left: 1rem !important;

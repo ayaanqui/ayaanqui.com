@@ -25,27 +25,25 @@ export default function Navbar(_props: {}) {
           <a className="navbar-brand">Ayaan Siddiqui</a>
         </Link>
 
-        <div className="navbar-collapse">
-          <ul className="navbar-nav ml-auto">
-            <NavItem
-              link="https://github.com/ayaanqui"
-              title="GitHub"
-              iconUrl="/images/github.png"
-            />
+        <ul className="navbar-nav ml-auto">
+          <NavItem
+            link="https://github.com/ayaanqui"
+            title="GitHub"
+            iconUrl="/images/github.png"
+          />
 
-            <NavItem
-              link="https://www.linkedin.com/in/ayaanqui"
-              title="LinkedIn"
-              iconUrl="/images/linkedin.png"
-            />
+          <NavItem
+            link="https://www.linkedin.com/in/ayaanqui"
+            title="LinkedIn"
+            iconUrl="/images/linkedin.png"
+          />
 
-            <NavItem
-              link="mailto:ayaanqui.com@gmail.com"
-              title="Email"
-              iconUrl="/images/email.png"
-            />
-          </ul>
-        </div>
+          <NavItem
+            link="mailto:ayaanqui.com@gmail.com"
+            title="Email"
+            iconUrl="/images/email.png"
+          />
+        </ul>
       </div>
     </nav>
   );

@@ -11,7 +11,12 @@ export default function RepoCard(props: any) {
       <div className={`list-group-item ${styles.repo_card}`}>
         <div className={styles.owner}>
           <a href={props.owner.html_url} target="_blank">
-            <Image src={`${props.owner.avatar_url}&s=30`} alt="avatar" />
+            <Image
+              src={`${props.owner.avatar_url}&s=30`}
+              width={30}
+              height={30}
+              alt="avatar"
+            />
             <span>{props.owner.login}</span>
           </a>
         </div>

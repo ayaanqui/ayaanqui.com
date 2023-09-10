@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import Content from "./components/layout/content";
+import Content from "./components/layout/Content";
 import PortfolioComponent from "./components/portfolio/Portfolio";
 
 export default function Home() {

@@ -1,4 +1,4 @@
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import styles from "./content.module.css";
 
 const Content = (props: {
