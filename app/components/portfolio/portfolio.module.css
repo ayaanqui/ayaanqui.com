@@ -2,7 +2,7 @@
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin: 0px -15px; /* gutter size offset */
+  margin: 0px; /* gutter size offset */
   width: auto;
 }
 .masonry_grid_column {
