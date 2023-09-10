@@ -1,7 +1,8 @@
-import styles from './RepoCard.module.css';
-import moment from 'moment';
+import Image from "next/image";
+import styles from "./RepoCard.module.css";
+import moment from "moment";
 
-const RepoCard = props => {
+export default function RepoCard(props: any) {
   const lastUpdated = moment(props.pushedAt).fromNow(true);
   const created = moment(props.createdAt).fromNow();
 
@@ -10,7 +11,12 @@ const RepoCard = props => {
       <div className={`list-group-item ${styles.repo_card}`}>
         <div className={styles.owner}>
           <a href={props.owner.html_url} target="_blank">
-            <img src={`${props.owner.avatar_url}&s=30`} />
+            <Image
+              src={`${props.owner.avatar_url}&s=30`}
+              width={30}
+              height={30}
+              alt="avatar"
+            />
             <span>{props.owner.login}</span>
           </a>
         </div>
@@ -22,7 +28,7 @@ const RepoCard = props => {
           </h4>
         </div>
         <div className={styles.description}>
-          <p>{(props.description) ? props.description : null}</p>
+          <p>{props.description ? props.description : null}</p>
         </div>
         <div className={styles.details}>
           <span className="badge badge-pill badge-dark mr-2">
@@ -35,7 +41,7 @@ const RepoCard = props => {
             {lastUpdated}
           </span>
 
-          {(props.language) ? (
+          {props.language ? (
             <span className="badge badge-pill badge-primary mr-2">
               {props.language}
             </span>
@@ -47,10 +53,7 @@ const RepoCard = props => {
             {props.size} kb
           </span>
         </div>
-
       </div>
     </>
   );
-};
-
-export default RepoCard
+}
