@@ -4,7 +4,7 @@ import Link from "next/link";
 function NavItem(props: { link: string; title: string; iconUrl: string }) {
   return (
     <li className="nav-item">
-      <a href={props.link} className="nav-link">
+      <a href={props.link} target="_blank" className="nav-link">
         <Image
           src={props.iconUrl}
           width={20}
